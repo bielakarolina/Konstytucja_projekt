@@ -13,8 +13,8 @@ public class Czytajplik {
 		
 	    private String sciezka;
 	     
-	    public Czytajplik(String plik_sciezka){
-	        sciezka = plik_sciezka;
+	    public Czytajplik(String plik_sciezka){		//kod zostanie zamieniony , najpierw bƒôdzie czyta≈Ç linie i wyrzuca≈Ç wyra≈ºenia
+	        sciezka = plik_sciezka;				
 	    }
 	     
 	    public String[] OtworzPlik() throws IOException {
@@ -29,9 +29,9 @@ public class Czytajplik {
 	          
 	         for(i=0; i < liczbaWierszy; i++){      
 	             tekstDane[i] = czytajTekst.readLine();
-	             zmiana[i] = tekstDane[i].replace("©Kancelaria Sejmu", " ");  //funkcje zamiana, tutaj bÍdzie jeszcze wywyo≥ywana funkcja
-	             zmiana[i] = zmiana[i].replace("2009-11-16", " ");				// ktÛra bÍdzie wyszukiwa≥a napis, sprawdza≥a w ktÛrej jest linii 
-	             																// i bÍdzie wyúwietla≥a okreúlony zakres za pomocπ okreúlenia wartoúÊi
+	             zmiana[i] = tekstDane[i].replace("¬©Kancelaria Sejmu", " ");  //funkcje zamiana, tutaj bƒôdzie jeszcze wywyo≈Çywana funkcja
+	             zmiana[i] = zmiana[i].replace("2009-11-16", " ");				// kt√≥ra bƒôdzie wyszukiwa≈Ça napis, sprawdza≈Ça w kt√≥rej jest linii 
+	             																// i bƒôdzie wy≈õwietla≈Ça okre≈õlony zakres za pomocƒÖ okre≈õlenia warto≈õƒái
 	             																// liczbaWierszy
 	         }
 	             czytajTekst.close();
