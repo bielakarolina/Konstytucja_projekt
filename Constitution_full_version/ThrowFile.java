@@ -17,48 +17,71 @@ public class ThrowFile {
 		        path = file_path;
 		    }
 		     
-		    public String[] OpenFile() throws IOException {
+		    public String[] OpenFile() throws IOException //funkcja otwiera plik od razu zamieniaj¹ przeczytane linie
+		    												//w których wsytêpuje zakazany ci¹g znaków lub znak na puste pole
+		    {
 		    	
-		    	 BufferedReader ReadText = new BufferedReader(new InputStreamReader(
-			        		new FileInputStream(path), "UTF8"));
-		     
-		         int number_lines = ReadTheLines( );
-		         String[] TextData = new String[number_lines];
-		         String [] changed = new String[number_lines];
-		        
+		    	BufferedReader ReadText = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF8"));
+		    
+		       	int number_lines = ReadTheLines( );
+		        String[] TextData = new String[number_lines];
+		                
+		         for(int i=0; i < number_lines; i++)
+		         {      
+		        	 TextData[i] = ReadText.readLine();
+		            
+		         }
 		         
-		         int i;
-		         String word=" ";
-		         for(i=0; i < number_lines; i++){      
-		        	 TextData[i] =word + ReadText.readLine();
-		             word ="";
-		             changed[i] = TextData[i].replace("©Kancelaria Sejmu", " ");  //funkcje zamiana, tutaj bêdzie jeszcze wywyo³ywana funkcja
-		             changed[i] = changed[i].replace("2009-11-16", " ");				// która bêdzie wyszukiwa³a napis, sprawdza³a w której jest linii 
-		            if(changed[i].equals(changed[i].toUpperCase())){
-		           		changed[i]="";}
-		            while(changed[i].endsWith("-") ){
+		             ReadText.close();
+		             String[]ChangedTextData = ChangeLines(TextData);
+		             return ChangedTextData; 
+		             
+		    }     
+		          
+		    String[] ChangeLines (String [] Table ) throws IOException
+		    {
+		    	int number_lines = ReadTheLines( );
+		    	String [] changed = new String[number_lines];
+		    	String word=" ";
+		    	for(int i = 0; i < number_lines; i++)
+		    	{
+		    		
+		    		changed[i] = word+Table[i].replace("©Kancelaria Sejmu", " ");  //funkcje zamiana, tutaj bêdzie jeszcze wywyo³ywana funkcja
+		             changed[i] = changed[i].replace("2009-11-16", " ");
+		             word ="";													// która bêdzie wyszukiwa³a napis, sprawdza³a w której jest linii 
+		            if(changed[i].equals(changed[i].toUpperCase()))
+		            {
+		           		changed[i]="";
+		           	}
+		            if(changed[i].endsWith("-") )
+		            {
 		            	//changed[i+1]=ReadText.readLine();
 		            	//changed[i] = changed[i].replace("-",((changed[i]).substring(0,changed[i].length()-1)+changed[i+1]));
 		            	
 		            	changed[i] = changed[i].substring(0, changed[i].length() - 1);
-                        int lastWord = changed[i].lastIndexOf(" ");
-                        word = changed[i].substring(lastWord + 1);
-                        changed[i] = changed[i].substring(0, lastWord);
+                       int lastWord = changed[i].lastIndexOf(" ");
+                       word = changed[i].substring(lastWord + 1);
+                       changed[i] = changed[i].substring(0, lastWord);
 		         
 		            }
-		         }
 		         
-		             ReadText.close();
-		             return changed ;
+		    	}
+		    	
+		    	return changed ;
+		    	
 		    }
+		             
 		    
-		    int ReadTheLines() throws IOException {
+		    
+		    int ReadTheLines() throws IOException 
+		    {
 		         
 		        FileReader file_to_read = new FileReader(path);
 		        BufferedReader bf = new BufferedReader(file_to_read);
 		         
 		        int counter_line = 0;
-		        while((bf.readLine()) != null){
+		        while((bf.readLine()) != null)
+		        {
 		            counter_line++;
 		        }
 		        bf.close();

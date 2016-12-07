@@ -18,22 +18,32 @@ public class Constitution {
 	     		Scanner reading = new Scanner(System.in);
 	     		 String name_file;
 	     		 name_file=reading.nextLine();
+	     		System.out.println("Co chcia³abyœ wczytaæ? ");
+	     		String whatdoyouwhant;
+	     		whatdoyouwhant=reading.nextLine();
+	     		if( whatdoyouwhant.equals("chapter"))
+	     		{
 	     		System.out.println("Je¿eli chcesz wyœwietliæ rozdzia³,podaj jego numer. "); //pobieramy napis, który bêdziemy poszukiwaæ
-	     		 String chapter; 
-	     		 chapter = reading.nextLine();
-	     		System.out.println("Je¿eli chcesz wyœwietliæ artyku³y podaj numer pocz¹tku. ");
-	    		 String start;  // 
-	    		 start = reading.nextLine();
-	    		 System.out.println("i numer koñca. ");
-	    		 String end;
-	    		 end = reading.nextLine();
-	    		 reading.close();
-	    		
-	    		 Chapter show_Chapter=new Chapter();
+	     		 int chapter; 
+	     		 chapter = reading.nextInt();
+	     		 reading.close();
+	     		 Chapter show_Chapter=new Chapter();
 	    		 show_Chapter.readChapter(chapter, name_file);
-	    		 Article show_me =new Article();
-	    		 show_me.readArticle(start, end, name_file);
-	        	
+	     		}
+	     		else if( whatdoyouwhant.equals("art"))
+	     		{
+	     			System.out.println("Je¿eli chcesz wyœwietliæ artyku³y podaj numer pocz¹tku. ");
+	     			int start;  // 
+	     			start = reading.nextInt();
+	     			System.out.println("i numer koñca. ");
+	     			int end;
+	     			end = reading.nextInt();
+	     			reading.close();
+	     			Article show_me =new Article();
+		    		show_me.readArticle(start, end, name_file);
+		        	
+	     		}
+	    		
 	        } catch (IOException e) {
 	            System.out.println(e.getMessage());
 	        }

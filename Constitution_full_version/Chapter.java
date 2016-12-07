@@ -4,15 +4,15 @@ import java.io.IOException;
 
 public class Chapter {
 	
-	public void readChapter(String a,String name) throws IOException{
+	public void readChapter(int x,String name) throws IOException{
 		
 		ThrowFile file_C = new ThrowFile(name);
         String[] line_file = file_C.OpenFile();
-        String startChapter = a;
-        String endChapter = "II";
-        
-        int i;
-	 	for(i=0; i < line_file.length;i++)
+        String startChapter = ArabicToRoman.changetoroman(x);
+        String endChapter = ArabicToRoman.changetoroman(x+1);
+        		
+                
+	 	for(int i=0; i < line_file.length;i++)
 	 	{
 	 		if(line_file[i].equals("Rozdzia³ "+ startChapter ))
 	 		{
