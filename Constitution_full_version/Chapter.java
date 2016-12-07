@@ -16,13 +16,14 @@ public class Chapter {
 	 	{
 	 		if(line_file[i].equals("Rozdzia³ "+ startChapter ))
 	 		{
-	 			while(!(line_file[i].equals("Rozdzia³ "+ endChapter)))
+	 			while((line_file.length>i) && (!(line_file[i].equals("Rozdzia³ "+ endChapter))))
 	 			{
 	 							System.out.println(line_file[i]);
 	 							i++;
 	 							
 	 		 	}
 	 			i=line_file.length;
+	 		
 	 		 		
 	 			       
 	 	        }

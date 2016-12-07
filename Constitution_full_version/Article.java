@@ -15,7 +15,7 @@ public class Article {
 	 	{
 	 		if(line_file[i].equals("Art. "+ startArticle +"."))
 	 		{
-	 			while(!(line_file[i].equals("Art. "+ (endArticle+1) +".")))
+	 			while((line_file.length>i) && !(line_file[i].equals("Art. "+ (endArticle+1) +".")))
 	 			{
 	 							System.out.println(line_file[i]);
 	 							i++;

@@ -56,7 +56,7 @@ public class ThrowFile {
 		            if(changed[i].endsWith("-") )
 		            {
 		            	
-		               changed[i] = changed[i].substring(0, changed[i].length() - 1);
+		               changed[i] = changed[i].substring(0, changed[i].length());
                        int lastWord = changed[i].lastIndexOf(" ");
                        word = changed[i].substring(lastWord + 1);
                        changed[i] = changed[i].substring(0, lastWord);
