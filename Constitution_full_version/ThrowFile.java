@@ -55,10 +55,8 @@ public class ThrowFile {
 		           	}
 		            if(changed[i].endsWith("-") )
 		            {
-		            	//changed[i+1]=ReadText.readLine();
-		            	//changed[i] = changed[i].replace("-",((changed[i]).substring(0,changed[i].length()-1)+changed[i+1]));
 		            	
-		            	changed[i] = changed[i].substring(0, changed[i].length() - 1);
+		               changed[i] = changed[i].substring(0, changed[i].length() - 1);
                        int lastWord = changed[i].lastIndexOf(" ");
                        word = changed[i].substring(lastWord + 1);
                        changed[i] = changed[i].substring(0, lastWord);
