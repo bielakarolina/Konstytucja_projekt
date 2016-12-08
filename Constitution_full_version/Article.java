@@ -8,7 +8,7 @@ public class Article {
 		
 		ThrowFile file_A = new ThrowFile(name);
         String[] line_file = file_A.OpenFile();
-        
+       
         
         
 	 	for(int i=0; i < line_file.length;i++)

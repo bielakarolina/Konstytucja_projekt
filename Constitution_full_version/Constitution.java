@@ -51,6 +51,10 @@ public class Constitution {
 	     			
 	     			}
 	        } 
+	        catch(IllegalArgumentException ex)
+	        {
+	        	System.out.println(ex.getMessage());
+	        }
 	        catch (IOException e)
 	        {
 	            System.out.println(e.getMessage());
