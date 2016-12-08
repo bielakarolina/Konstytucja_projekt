@@ -46,17 +46,22 @@ public class ThrowFile {
 		    	for(int i = 0; i < number_lines; i++)
 		    	{
 		    		
-		    		changed[i] = word+Table[i].replace("©Kancelaria Sejmu", " ");  //funkcje zamiana, tutaj bêdzie jeszcze wywyo³ywana funkcja
+		    		changed[i] = Table[i].replace("©Kancelaria Sejmu", " ");  //funkcje zamiana, tutaj bêdzie jeszcze wywyo³ywana funkcja
 		             changed[i] = changed[i].replace("2009-11-16", " ");
-		             word ="";													// która bêdzie wyszukiwa³a napis, sprawdza³a w której jest linii 
+		             													// która bêdzie wyszukiwa³a napis, sprawdza³a w której jest linii 
 		            if(changed[i].equals(changed[i].toUpperCase()))
 		            {
 		           		changed[i]="";
 		           	}
+		    	}
+		         for(int i = 0; i < number_lines; i++)
+			    	{ 
+		            
 		            if(changed[i].endsWith("-") )
 		            {
 		            	
-		               changed[i] = changed[i].replace("-", "");
+		               changed[i] = word+changed[i].replace("-", "");
+		               word ="";
 		               changed[i] = changed[i].substring(0, changed[i].length());
                        int lastWord = changed[i].lastIndexOf(" ");
                        word = changed[i].substring(lastWord + 1);
@@ -69,7 +74,7 @@ public class ThrowFile {
 		    	return changed ;
 		    	
 		    }
-		             
+		            
 		    
 		    
 		    int ReadTheLines() throws IOException 
