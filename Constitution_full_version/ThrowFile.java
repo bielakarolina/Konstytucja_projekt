@@ -7,13 +7,15 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 
 
-public class ThrowFile {
+public class ThrowFile 
+{
 
     
 			
 		    private String path;
 		     
-		    public ThrowFile(String file_path){
+		    public ThrowFile(String file_path)
+		    {
 		        path = file_path;
 		    }
 		     
@@ -46,7 +48,7 @@ public class ThrowFile {
 		    	for(int i = 0; i < number_lines; i++)
 		    	{
 		    		
-		    		changed[i] =word+ Table[i].replace("©Kancelaria Sejmu", " ");
+		    		changed[i] = word+ Table[i].replace("©Kancelaria Sejmu", " ");
 		    		word ="";
 		             changed[i] = changed[i].replace("2009-11-16", " ");
 		             													// która bêdzie wyszukiwa³a napis, sprawdza³a w której jest linii 

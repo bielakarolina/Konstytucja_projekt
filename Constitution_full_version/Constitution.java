@@ -5,18 +5,20 @@ package constitution;
 import java.io.IOException;
 
 
-public class Constitution {
+public class Constitution 
+{
 
 
- 	 public static void main(String[] args) throws IOException {
+ 	 public static void main(String[] args) throws IOException 
+ 	 {
  		 
  		
 		 
 	        
-	        try {
+ 		 	try {
 	        	Parser.ReadArguments();
 	     			
-	        } 
+ 		 	} 
 	        catch(IllegalArgumentException ex)
 	        {
 	        	System.out.println(ex.getMessage());

@@ -2,9 +2,11 @@ package constitution;
 
 import java.io.IOException;
 
-public class Article {
+public class Article
+{
 
-	public void  readArticle( int startArticle, int endArticle,String name) throws IOException{
+	public void  readArticle( int startArticle, int endArticle,String name) throws IOException
+	{
 		
 		ThrowFile file_A = new ThrowFile(name);
         String[] line_file = file_A.OpenFile();

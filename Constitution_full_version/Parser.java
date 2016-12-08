@@ -3,7 +3,8 @@ package constitution;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Parser {
+public class Parser 
+{
 
 	public static boolean Chapterdefine(String defineA)
 	{
@@ -38,14 +39,16 @@ public class Parser {
 		}
 	}
 	
-	public static void Chapterscope(int x){
+	public static void Chapterscope(int x)
+	{
 		if(x<0 || x>13)
 			{
 			System.out.println("Nie ma takiego rozdzialu");
 			System.exit(1);
 			}
 	}
-	public static void Articlescope(int first,int last){
+	public static void Articlescope(int first,int last)
+	{
 		if(first<0 || first>243 || last<first || last>243)
 			{
 			System.out.println("B³êdny przedzia³");

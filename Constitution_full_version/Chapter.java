@@ -2,9 +2,11 @@ package constitution;
 
 import java.io.IOException;
 
-public class Chapter {
+public class Chapter
+{
 	
-	public void readChapter(int x,String name) throws IOException{
+	public void readChapter(int x,String name) throws IOException
+	{
 		
 		ThrowFile file_C = new ThrowFile(name);
         String[] line_file = file_C.OpenFile();

@@ -1,6 +1,7 @@
 package constitution;
 
-public class ArabicToRoman {
+public class ArabicToRoman
+{
 	
 	private static final int arabic[] = {10, 5, 1};
 	private static final char roman[] = {'X', 'V', 'I'};
