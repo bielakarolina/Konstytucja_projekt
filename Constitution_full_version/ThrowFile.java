@@ -17,8 +17,8 @@ public class ThrowFile {
 		        path = file_path;
 		    }
 		     
-		    public String[] OpenFile() throws IOException //funkcja otwiera plik od razu zamieniaj¹ przeczytane linie
-		    												//w których wsytêpuje zakazany ci¹g znaków lub znak na puste pole
+		    public String[] OpenFile() throws IOException //funkcja otwiera plik od razu zamieniajÄ… przeczytane linie
+		    												//w ktÃ³rych wsytÄ™puje zakazany ciÄ…g znakÃ³w lub znak na puste pole
 		    {
 		    	
 		    	BufferedReader ReadText = new BufferedReader(new InputStreamReader(new FileInputStream(path), "UTF8"));
@@ -46,21 +46,20 @@ public class ThrowFile {
 		    	for(int i = 0; i < number_lines; i++)
 		    	{
 		    		
-		    		changed[i] = Table[i].replace("©Kancelaria Sejmu", " ");  //funkcje zamiana, tutaj bêdzie jeszcze wywyo³ywana funkcja
+		    		changed[i] =word+ Table[i].replace("Â©Kancelaria Sejmu", " ");
+		    		word ="";
 		             changed[i] = changed[i].replace("2009-11-16", " ");
-		             													// która bêdzie wyszukiwa³a napis, sprawdza³a w której jest linii 
+		             													// ktÃ³ra bÃªdzie wyszukiwaÂ³a napis, sprawdzaÂ³a w ktÃ³rej jest linii 
 		            if(changed[i].equals(changed[i].toUpperCase()))
 		            {
 		           		changed[i]="";
 		           	}
-		    	}
-		         for(int i = 0; i < number_lines; i++)
-			    	{ 
+		    	     
 		            
 		            if(changed[i].endsWith("-") )
 		            {
 		            	
-		               changed[i] = word+changed[i].replace("-", "");
+		               changed[i] = changed[i].replace("-", "");
 		               word ="";
 		               changed[i] = changed[i].substring(0, changed[i].length());
                        int lastWord = changed[i].lastIndexOf(" ");
