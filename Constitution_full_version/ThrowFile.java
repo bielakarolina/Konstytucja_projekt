@@ -52,10 +52,7 @@ public class ThrowFile
 		    		word ="";
 		             changed[i] = changed[i].replace("2009-11-16", " ");
 		             													// która bêdzie wyszukiwa³a napis, sprawdza³a w której jest linii 
-		            if(changed[i].equals(changed[i].toUpperCase()))
-		            {
-		           		changed[i]="";
-		           	}
+		           
 		    	     
 		            
 		            if(changed[i].endsWith("-") )
